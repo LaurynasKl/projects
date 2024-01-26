@@ -1,0 +1,1 @@
+<?php require ROOT. 'views/header.php'; ?>

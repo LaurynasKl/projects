@@ -1,0 +1,17 @@
+{
+    "name": "klumb/bank-u4",
+    "description": "BankU4",
+    "autoload": {
+        "psr-4": {
+            "": "",
+            "BankU4\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "BankU4",
+            "email": "BankU4@gmail.com"
+        }
+    ],
+    "require": {}
+}
