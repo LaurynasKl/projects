@@ -34,6 +34,11 @@ class Bank
         if ($method == 'GET' && count($url) == 2 && $url[0] == 'crud' && $url[1] == 'create'){
             return (new CreateController)->create();
         }
+        if ($method == 'GET' && count($url) == 2 && $url[0] == 'crud' && $url[1] == 'store'){
+            return (new CreateController)->store($_POST);
+        }
+
+
         if ($method == 'GET' && count($url) == 2 && $url[0] == 'crud' && $url[1] == 'showAll'){
             return (new ShowController)->showAll();
         }

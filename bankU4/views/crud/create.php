@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-7">
-            <form action="http://mybank.test/crud/store" method="post">
+            <form action="<?=URL?>/store" method="post">
                 <div class="card bg-primary-subtle">
                     <h5 class="card-header">Create account</h5>
                     <div class="card-body">
@@ -12,8 +12,8 @@
                             <input type="text" class="form-control" id="name" name="name">
                         </div>
                         <div class="mb-3">
-                            <label for="lastName" class="form-label">Last name</label>
-                            <input type="text" class="form-control" id="lastName" name="lastName">
+                            <label for="surname" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="surname" name="surname">
                         </div>
                         <div class="mb-3">
                             <label for="code" class="form-label">Personal code</label>
@@ -21,7 +21,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="account" class="form-label">Your new account</label>
-                                <input type="text" class="form-control" id="account" name="account" value="LT2074183946403241">
+                                <input type="text" class="form-control" id="account" name="account">
                         </div>
                         <button class="btn btn-primary">Create</button>
                     </div>

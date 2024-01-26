@@ -13,4 +13,8 @@ class ShowController
         ]);
     }
 
+    public function show($code) {
+
+    }
+
 }

@@ -3,7 +3,6 @@
     "description": "BankU4",
     "autoload": {
         "psr-4": {
-            "": "",
             "BankU4\\": ""
         }
     },
