@@ -4,7 +4,7 @@ namespace App\DB;
 
 interface DataBase
 {
-    // function create(object $userData) : int;
+    function create(object $userData) : int;
 
 
     // function update(int $userId, object $userData) : bool;
@@ -15,6 +15,6 @@ interface DataBase
 
     // function show(int $userId) : object;
     
-    // function showAll() : array;
+    function showAll() : array;
 }
 

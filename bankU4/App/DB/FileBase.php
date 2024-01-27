@@ -31,7 +31,12 @@ class FileBase implements DataBase{
 
     public function create(object $userData): int
     {
-        
+        $id = $this->indexData;
+        $this->indexData++;
+
+        $userData->id = $id;
+        $this->fileData[] = $userData;
+        return $id;
     }
 
     // public function update(int $userId, object $userData): bool
@@ -49,8 +54,8 @@ class FileBase implements DataBase{
         
     // }
 
-    // public function showAll(): array
-    // {
-        
-    // }
+    public function showAll(): array
+    {
+        return $this->fileData;
+    }
 }

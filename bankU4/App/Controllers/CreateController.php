@@ -14,22 +14,26 @@ class CreateController
         ]);
     }
 
-    public function store($request) {
-        $name = $request['name'];
-        $surname = $request['surnmae'];
-        $code = $request['code'];
-        $account = $request['account'];
+    // public function store($request) {
+
+    //     $name = $request['name'];
+    //     $surname = $request['surname'];
+    //     $code = $request['code'];
+    //     $account = $request['account'];
 
 
-        $write = new FileBase('bankas');
+    //     $write = new FileBase('bankas');
 
-        $write->create((object) [
-            'name' => $name,
-            'surname' => $surname,
-            'code' => $code,
-            'account' => $account,
-        ]);
+    //     $write->create((object) [
+    //         'name' => $name,
+    //         'surname' => $surname,
+    //         'code' => $code,
+    //         'account' => $account,
+    //     ]);
 
-    }
+    //     return Bank::grazinam('crud/showAll',[
+    //         'title' => 'Show All',
+    //     ]);
+    // }
 
 }

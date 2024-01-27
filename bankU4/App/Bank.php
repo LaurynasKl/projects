@@ -31,12 +31,13 @@ class Bank
         if ($method == 'GET' && count($url) == 1 && $url[0] == 'main'){
             return (new HomeController)->main();
         }
+
         if ($method == 'GET' && count($url) == 2 && $url[0] == 'crud' && $url[1] == 'create'){
             return (new CreateController)->create();
         }
-        if ($method == 'GET' && count($url) == 2 && $url[0] == 'crud' && $url[1] == 'store'){
-            return (new CreateController)->store($_POST);
-        }
+        // if ($method == 'POST' && count($url) == 2 && $url[0] == 'crud' && $url[1] == 'store'){
+        //     return (new CreateController)->store($_POST);
+        // }
 
 
         if ($method == 'GET' && count($url) == 2 && $url[0] == 'crud' && $url[1] == 'showAll'){

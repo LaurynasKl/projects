@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-7">
-            <form action="<?=URL?>/store" method="post">
+            <form action="<?=URL?>/crud/store" method="post">
                 <div class="card bg-primary-subtle">
                     <h5 class="card-header">Create account</h5>
                     <div class="card-body">

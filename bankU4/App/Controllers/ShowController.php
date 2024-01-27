@@ -2,14 +2,20 @@
 
 namespace BankU4\App\Controllers;
 
+use App\DB\FileBase;
 use BankU4\App\Bank;
 
 class ShowController
 {
 
     public function showAll() {
-        return Bank::ziureti('crud/showAll', [
-            'title' => 'All account',
+
+        $writer = new FileBase('bankas');
+        $accounts = $writer->showAll();
+ 
+        return Bank::grazinam('crud/showAll', [
+            'title' => 'Show all',
+            // 'accounts' => $accounts,
         ]);
     }
 
