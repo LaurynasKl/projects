@@ -10,17 +10,27 @@ class ShowController
 
     public function showAll() {
 
+
         $writer = new FileBase('bankas');
         $accounts = $writer->showAll();
  
-        return Bank::grazinam('crud/showAll', [
+        return Bank::ziureti('crud/showAll', [
             'title' => 'Show all',
-            // 'accounts' => $accounts,
+            'accounts' => $accounts,
         ]);
+
+        return Bank::grazinam('crud/showAll');
     }
 
     public function show($code) {
 
+        $writer = new FileBase('bankas');
+        $account = $writer->show($code);
+
+        return Bank::ziureti('crud/show', [
+            'title' => 'Show',
+            'account' => $account,
+        ]);
     }
 
 }

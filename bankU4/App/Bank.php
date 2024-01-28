@@ -5,6 +5,8 @@ namespace BankU4\App;
 use BankU4\App\Controllers\CreateController;
 use BankU4\App\Controllers\HomeController;
 use BankU4\App\Controllers\ShowController;
+use BankU4\App\Controllers\DeleteController;
+use BankU4\App\Controllers\UpdateController;
 
 class Bank
 {
@@ -35,13 +37,25 @@ class Bank
         if ($method == 'GET' && count($url) == 2 && $url[0] == 'crud' && $url[1] == 'create'){
             return (new CreateController)->create();
         }
-        // if ($method == 'POST' && count($url) == 2 && $url[0] == 'crud' && $url[1] == 'store'){
-        //     return (new CreateController)->store($_POST);
-        // }
-
+        if ($method == 'POST' && count($url) == 2 && $url[0] == 'crud' && $url[1] == 'store'){
+            return (new CreateController)->store($_POST);
+        }
 
         if ($method == 'GET' && count($url) == 2 && $url[0] == 'crud' && $url[1] == 'showAll'){
             return (new ShowController)->showAll();
+        }
+        if ($method == 'POST' && count($url) == 3 && $url[0] == 'crud' && $url[1] == 'show'){
+            return (new ShowController)->show($url[2]);
+        }
+
+
+        if ($method == 'POST' && count($url) == 3 && $url[0] == 'crud' && $url[1] == 'update'){
+            return (new UpdateController)->update($url[2], $_POST);
+        }
+
+
+        if ($method == 'POST' && count($url) == 3 && $url[0] == 'crud' && $url[1] == 'destroy'){
+            return (new DeleteController)->destroy($url[2]);
         }
 
 

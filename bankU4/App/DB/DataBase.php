@@ -10,10 +10,10 @@ interface DataBase
     // function update(int $userId, object $userData) : bool;
 
 
-    // function delete(int $userId) : bool;
+    function delete(int $userId) : bool;
 
 
-    // function show(int $userId) : object;
+    function show(int $userId) : object;
     
     function showAll() : array;
 }
