@@ -9,11 +9,23 @@ class UpdateController
 {
     public function update($id, $userData) {
 
-        $name = $userData['name'];
+        $money = $userData['money'] ?? 0;
 
         $write = new FileBase('bankas');
-        $write->update($id, $userData);
-
+        $write->update($id, (object) [
+            'money' => $money,
+        ]);
+        return Bank::grazinam('crud/showAll');
     }
 
+    public function updateMinus($id, $userData) {
+
+        $money = $userData['money'] ?? 0;
+
+        $write = new FileBase('bankas');
+        $write->updateMinus($id, (object) [
+            'money' => $money,
+        ]);
+        return Bank::grazinam('crud/showAll');
+    }
 }

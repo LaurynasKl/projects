@@ -52,6 +52,9 @@ class Bank
         if ($method == 'POST' && count($url) == 3 && $url[0] == 'crud' && $url[1] == 'update'){
             return (new UpdateController)->update($url[2], $_POST);
         }
+        if ($method == 'POST' && count($url) == 3 && $url[0] == 'crud' && $url[1] == 'updateMinus'){
+            return (new UpdateController)->updateMinus($url[2], $_POST);
+        }
 
 
         if ($method == 'POST' && count($url) == 3 && $url[0] == 'crud' && $url[1] == 'destroy'){

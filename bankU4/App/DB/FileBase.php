@@ -39,14 +39,36 @@ class FileBase implements DataBase{
         return $id;
     }
 
-    // public function update(int $userId, object $userData): bool
-    // {
-    //     foreach ($this->fileData as $file) {
-    //         if ($file->id == $userId) {
-
-    //         }
-    //     }
-    // }
+    public function update(int $userId, object $userData): bool
+    {
+        foreach ($this->fileData as $key => $file) {
+            if ($file->id == $userId) {
+                if (isset($file->money)) {
+                    (float)$file->money += (float)$userData->money;
+                    $this->fileData[$key] = $file;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
+    public function updateMinus(int $userId, object $userData): bool
+    {
+        foreach ($this->fileData as $key => $file) {
+            if ($file->id == $userId) {
+                if ($file->money >= $userData->money) {
+                    if (isset($file->money)) {
+                        ceil($file->money = (float)$file->money - (float)$userData->money);
+                        $this->fileData[$key] = $file;
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
 
     public function delete(int $userId): bool
     {

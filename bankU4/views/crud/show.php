@@ -11,14 +11,25 @@
                         <!-- <li class="list-group-item"><b>Last name:</b> <?= $account->surname ?></li> -->
                         <li class="list-group-item"><b>Personal code:</b> <?= $account->code ?></li>
                         <li class="list-group-item"><b>Personal account:</b> <?= $account->account ?></li>
-                        <li class="list-group-item"><b>Personal eur:</b> <?= $account->money ?> </li>
-                        <form action="<?= URL ?>/crud/update" method="post">
-                            
+                        <li class="list-group-item"><b>Money:</b> <?= $account->money ?> eur </li>
+
+                        <form class="mt-2" action="<?= URL ?>/crud/update/<?= $account->id ?>" method="post">
+                            <label for="money"></label>
+                            <input type="text" name="money">
+                            <button type="submit" class="btn btn-success">Add money</button>
+                        </form>
+
+                        <form class="mt-2" action="<?= URL ?>/crud/updateMinus/<?= $account->id ?>" method="post">
+                            <label for="money"></label>
+                            <input type="text" name="money">
+                            <button type="submit" class="btn btn-secondary">Remove money</button>
                         </form>
                     </ul>
-                    <form action="<?= URL ?>/crud/destroy/<?= $account->id ?>" method="post">
-                        <button type="submit" class="btn btn-danger"">DELETE</button>
-                    </form>
+                    <?php if ($account->money <= 0) : ?>
+                        <form action="<?= URL ?>/crud/destroy/<?= $account->id ?>" method="post">
+                            <button type="submit" class="btn btn-danger">DELETE</button>
+                        </form>
+                    <?php endif ?>
                 </div>
             </div>
         </div>
