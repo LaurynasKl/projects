@@ -43,18 +43,18 @@ class MariaDB implements DataBase
 
     public function update(int $userId, object $userData): bool
     {
-        // $sql = "
-        //     UPDATE {$this->bankName} 
-        //     SET money = ?
-        //     WHERE id = ?
-        // ";
-        // $stmt = $this->pdo->prepare($sql);
-        // return $stmt->execute([$userData->money]);
+        $sql = "
+            UPDATE {$this->bankName} 
+            SET money = ?
+            WHERE id = ?
+        ";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([$userData->money]);
     }
 
-    public function updateMinus(int $userId, object $userData): bool
-    {
-    }
+    // public function updateMinus(int $userId, object $userData): bool
+    // {
+    // }
 
     public function delete(int $userId): bool
     {
