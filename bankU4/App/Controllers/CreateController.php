@@ -4,6 +4,7 @@ namespace BankU4\App\Controllers;
 
 use BankU4\App\Bank;
 use App\DB\FileBase;
+use App\DB\MariaDB;
 
 class CreateController
 {
@@ -16,7 +17,7 @@ class CreateController
 
     public function store($request) {
 
-        $id = $request['id'];
+        // $id = $request['id'];
         $name = $request['name'];
         $surname = $request['surname'];
         $code = $request['code'];
@@ -25,10 +26,13 @@ class CreateController
         $money = 0;
 
 
-        $write = new FileBase('bankas');
+        $write = match (DB) {
+            'file' => new FileBase('bankas'),
+            'maria' => new MariaDB('bank4'),
+        };
 
         $write->create((object) [
-            'id' => $id,
+            // 'id' => $id,
             'name' => $name,
             'surname' => $surname,
             'code' => $code,

@@ -1,6 +1,6 @@
 <?php require ROOT . 'views/header.php'; ?>
 
-<div class="container">
+<div class="container mt-5">
     <div class="row  justify-content-center">
         <div class="col-7">
             <div class="card bg-primary-subtle">

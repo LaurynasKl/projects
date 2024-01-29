@@ -4,6 +4,7 @@ namespace BankU4\App\Controllers;
 
 use BankU4\App\Bank;
 use App\DB\FileBase;
+use App\DB\MariaDB;
 
 class UpdateController
 {
@@ -11,7 +12,11 @@ class UpdateController
 
         $money = $userData['money'] ?? 0;
 
-        $write = new FileBase('bankas');
+        $write = match (DB) {
+            'file' => new FileBase('bankas'),
+            'maria' => new MariaDB('bank4'),
+        };
+
         $write->update($id, (object) [
             'money' => $money,
         ]);
@@ -22,7 +27,11 @@ class UpdateController
 
         $money = $userData['money'] ?? 0;
 
-        $write = new FileBase('bankas');
+        $write = match (DB) {
+            'file' => new FileBase('bankas'),
+            'maria' => new MariaDB('bank4'),
+        };
+
         $write->updateMinus($id, (object) [
             'money' => $money,
         ]);
