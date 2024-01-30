@@ -7,7 +7,7 @@ session_start();
 
 require '../vendor/autoload.php';
 
-define('DB', 'file');
+define('DB', 'maria');
 
 define('ROOT', __DIR__. '/../'); 
 define('URL', 'http://banku4.test');

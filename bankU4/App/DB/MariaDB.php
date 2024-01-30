@@ -48,8 +48,11 @@ class MariaDB implements DataBase
             SET money = ?
             WHERE id = ?
         ";
+        $currentMoney = $userData->money;
+        $newMoney = $currentMoney + $userData->money;
+
         $stmt = $this->pdo->prepare($sql);
-        return $stmt->execute([$userData->money]);
+        return $stmt->execute([$newMoney,$userId]);
     }
 
     // public function updateMinus(int $userId, object $userData): bool
