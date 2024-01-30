@@ -44,9 +44,12 @@ class MariaDB implements DataBase
     public function update(int $userId, object $userData): bool
     {
         $sql = "
+            SELECT money
+            FROM {$this->bankName} 
+            WHERE id = ?
+            
             UPDATE {$this->bankName} 
             SET money = ?
-            WHERE id = ?
         ";
         $currentMoney = $userData->money;
         $newMoney = $currentMoney + $userData->money;
