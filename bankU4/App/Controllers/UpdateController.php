@@ -5,6 +5,7 @@ namespace BankU4\App\Controllers;
 use BankU4\App\Bank;
 use App\DB\FileBase;
 use App\DB\MariaDB;
+use BankU4\App\Message;
 
 class UpdateController
 {
@@ -20,6 +21,8 @@ class UpdateController
         $write->update($id, (object) [
             'money' => $money,
         ]);
+        Message::get()->set('info', "You added $money eur");
+
         return Bank::grazinam('crud/showAll');
     }
 
@@ -35,6 +38,7 @@ class UpdateController
         $write->updateMinus($id, (object) [
             'money' => $money,
         ]);
+        Message::get()->set('success', "You remove $money eur");
         return Bank::grazinam('crud/showAll');
     }
 }

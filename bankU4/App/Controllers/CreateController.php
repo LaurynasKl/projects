@@ -5,6 +5,7 @@ namespace BankU4\App\Controllers;
 use BankU4\App\Bank;
 use App\DB\FileBase;
 use App\DB\MariaDB;
+use BankU4\App\Message;
 
 class CreateController
 {
@@ -17,7 +18,7 @@ class CreateController
 
     public function store($request) {
 
-        // $id = $request['id'];
+        $id = $request['id'];
         $name = $request['name'];
         $surname = $request['surname'];
         $code = $request['code'];
@@ -32,13 +33,15 @@ class CreateController
         };
 
         $write->create((object) [
-            // 'id' => $id,
+            'id' => $id,
             'name' => $name,
             'surname' => $surname,
             'code' => $code,
             'account' => $account,
             'money' => $money,
         ]);
+
+        Message::get()->set('success', "$name $surname create account");
 
         return Bank::grazinam('crud/showAll',[
             'title' => 'Show All',

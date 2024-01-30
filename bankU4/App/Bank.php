@@ -3,10 +3,11 @@
 namespace BankU4\App;
 
 use BankU4\App\Controllers\CreateController;
-use BankU4\App\Controllers\HomeController;
 use BankU4\App\Controllers\ShowController;
 use BankU4\App\Controllers\DeleteController;
 use BankU4\App\Controllers\UpdateController;
+use BankU4\App\Controllers\LoginController;
+use BankU4\App\Message;
 
 class Bank
 {
@@ -27,12 +28,18 @@ class Bank
 
         $method = $_SERVER['REQUEST_METHOD'];
 
-        if ($method == 'GET' && count($url) == 1 && $url[0] == ''){
-            return (new HomeController)->index();
+        if ($method == 'GET' && count($url) == 1 && $url[0] == 'login'){
+            return (new LoginController)->index();
         }
-        if ($method == 'GET' && count($url) == 1 && $url[0] == 'main'){
-            return (new HomeController)->main();
+        if ($method == 'POST' && count($url) == 1 && $url[0] == 'login'){
+            return (new LoginController)->login($_POST);
         }
+        if ($method == 'POST' && count($url) == 1 && $url[0] == 'logout'){
+            return (new LoginController)->logout($_POST);
+        }
+
+
+
 
         if ($method == 'GET' && count($url) == 2 && $url[0] == 'crud' && $url[1] == 'create'){
             return (new CreateController)->create();
@@ -71,6 +78,9 @@ class Bank
     public static function ziureti($view, $data = []){
 
         extract($data);
+        $msg = Message::get()->show();
+        $auth = Auth::get()->getStatus();
+
         ob_start();
 
         require ROOT . "views/top.php";

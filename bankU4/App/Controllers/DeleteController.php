@@ -5,6 +5,7 @@ namespace BankU4\App\Controllers;
 use BankU4\App\Bank;
 use App\DB\FileBase;
 use App\DB\MariaDB;
+use BankU4\App\Message;
 
 class DeleteController
 {
@@ -16,6 +17,9 @@ class DeleteController
         };
 
         $write->delete($request);
+
+        Message::get()->set('danger', "Account deleted");
+
 
         return Bank::grazinam('crud/showAll');
     }
