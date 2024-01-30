@@ -31,5 +31,5 @@ class LoginController {
         Message::get()->set('warning', 'You are logged out');
         return Bank::grazinam('login');
     }
-
+ 
 }
