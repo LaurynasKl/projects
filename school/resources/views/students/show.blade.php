@@ -6,26 +6,23 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h1>Visi studentai</h1>
+                        <h1>{{$student->name}} {{$student->surname}}</h1>
                     </div>
                     <div class="card-body">
                         <table class="table">
                             <tr>
-                                <th>Vardas</th>
-                                <th>Pavarde</th>
+                                <th>Elektroninis pastas</th>
+                                <td> {{$student->email}} </td>
+                                <td>
+                                    <a href="">Keisti</a>
+                                </td>
                             </tr>
-                            <tr>
-                                @foreach ($students as $student)
-                                    <td>{{ $student->name }}</td>
-                                    <td>{{ $student->surname }}</td>
-                            </tr>
-                            @endforeach
-
                         </table>
+                        <button class="btn btn-danger mt-2">Istrinti paskyra</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-@section('title', 'Students')
+@section('title', 'Studentas')

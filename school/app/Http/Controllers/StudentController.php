@@ -13,7 +13,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -37,7 +37,10 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        $student = Student::first();
+        return view('students.show', [
+            'student' => $student,
+        ]);
     }
 
     /**

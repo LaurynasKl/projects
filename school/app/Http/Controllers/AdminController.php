@@ -7,7 +7,6 @@ use App\Models\Student;
 use App\Http\Requests\StoreAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
 use App\Models\User;
-use GuzzleHttp\Psr7\Request;
 
 class AdminController extends Controller
 {
@@ -16,7 +15,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $students = Student::all();
+        return view('admin.index', [
+            'students' => $students,
+        ]);
     }
 
     /**
@@ -42,7 +44,10 @@ class AdminController extends Controller
      */
     public function show(Admin $admin)
     {
-        //
+        $student = Student::where('id')->first();
+        return view('admin.show', [
+            'student' => $student,
+        ]);
     }
 
     /**
