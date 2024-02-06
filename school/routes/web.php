@@ -20,7 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::prefix('admin')->name('admin-')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::get('/create', [AdminController::class, 'create'])->name('create');
@@ -28,12 +27,14 @@ Route::prefix('admin')->name('admin-')->group(function () {
     Route::get('/show', [AdminController::class, 'show'])->name('show');
 });
 
+
 Route::prefix('student')->name('student-')->group(function () {
     Route::get('/', [StudentController::class, 'index'])->name('index');
     Route::get('/create', [StudentController::class, 'create'])->name('create');
     Route::post('/store', [StudentController::class, 'store'])->name('store');
     Route::get('/show', [StudentController::class, 'show'])->name('show');
 });
+
 
 
 

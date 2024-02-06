@@ -34,13 +34,18 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
 
-
-                    @if (Auth::check() == 'Admin')
+                    @if (Auth::check() && Auth::user()->name == 'Admin')
                         <ul class="navbar-nav p-2">
                             <a class="nav-link" href="{{ route('admin-create') }}">Uzregistruoti nauja studenta</a>
                         </ul>
                         <ul class="navbar-nav p-2">
                             <a class="nav-link" href="{{ route('admin-index') }}">Visi studentai</a>
+                        </ul>
+                    @endif
+
+                    @if (Auth::check() && Auth::user()->name !== 'Admin')
+                        <ul class="navbar-nav p-2">
+                            <a class="nav-link" href="{{ route('student-show') }}">Informacija</a>
                         </ul>
                     @endif
 

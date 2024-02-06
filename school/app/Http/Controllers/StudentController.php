@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
@@ -13,7 +14,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        
+        return view('students.index');
     }
 
     /**
@@ -37,7 +38,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        $student = Student::first();
+        $student = Student::select('id');
         return view('students.show', [
             'student' => $student,
         ]);

@@ -6,13 +6,13 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h1>{{$student->name}} {{$student->surname}}</h1>
+                        {{-- <h1>{{$student->name}} {{$student->surname}}</h1> --}}
                     </div>
                     <div class="card-body">
                         <table class="table">
                             <tr>
                                 <th>Elektroninis pastas</th>
-                                <td> {{$student->email}} </td>
+                                {{-- <td> {{$student->email}} </td> --}}
                                 <td>
                                     <a href="">Keisti</a>
                                 </td>
