@@ -36,7 +36,7 @@
                                     <a class="nav-link" href=" {{route('admin-create')}} ">New Client</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">All Clients</a>
+                                    <a class="nav-link" href="{{route('admin-showAll')}}">All Clients</a>
                                 </li>
                             </ul>
                         </div>

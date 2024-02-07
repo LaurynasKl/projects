@@ -8,23 +8,23 @@
         <form action="{{route('admin-store')}}" method="POST">
           <div class="mb-2">
             <label class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter name">
+            <input type="text" class="form-control" name="name" placeholder="Enter name">
           </div>
           <div class="mb-2">
             <label class="form-label">Surname</label>
-            <input type="text" class="form-control" id="surname" placeholder="Enter surname">
+            <input type="text" class="form-control" name="surname" placeholder="Enter surname">
           </div>
           <div class="mb-2">
             <label class="form-label">Email</label>
-            <input type="text" class="form-control" id="email" placeholder="Enter your email address">
+            <input type="text" class="form-control" name="email" placeholder="Enter your email address">
           </div>
           <div class="mb-2">
             <label class="form-label">Personal code</label>
-            <input type="text" class="form-control" id="code" placeholder="Enter your perosnal code">
+            <input type="text" class="form-control" name="code" placeholder="Enter your perosnal code">
           </div>
           <div class="mb-2">
             <label class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Create password">
+            <input type="password" class="form-control" name="password" placeholder="Create password">
           </div>
           
           <button type="submit" class="btn btn-primary">Create</button>

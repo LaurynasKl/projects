@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Http\Requests\StoreAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
+use App\Models\Client;
 use App\Models\User;
 
 class AdminController extends Controller
@@ -31,6 +32,7 @@ class AdminController extends Controller
     public function store(StoreAdminRequest $request)
     {
         User::create($request->all());
+        Client::create($request->all());
         return redirect()->route('admin-index');
     }
 
@@ -40,6 +42,14 @@ class AdminController extends Controller
     public function show(Admin $admin)
     {
         //
+    }
+
+    public function showAll()
+    {
+        $clients = Client::all();
+        return view('admin.showAll', [
+            'clients' => $clients,
+        ]);
     }
 
     /**

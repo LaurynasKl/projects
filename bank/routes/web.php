@@ -23,6 +23,7 @@ Route::prefix('admin')->name('admin-')->group(function() {
     Route::get('/', [AdminController::class, 'index'])->name('index');
     Route::get('/create', [AdminController::class, 'create'])->name('create');
     Route::post('/store', [AdminController::class, 'store'])->name('store');
+    Route::get('/showAll', [AdminController::class, 'showAll'])->name('showAll');
 });
 
 
