@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col">
+            <div class="col-md-10">
                 <h2 class="mb-4">All Clients</h2>
                 <ul class="list-group">
                     <div class="card-body">
@@ -13,6 +13,7 @@
                                 <th>Last Name</th>
                                 <th>Email</th>
                                 <th>Personala Code</th>
+                                {{-- <th>Accounts</th> --}}
                                 <th>Total</th>
                             </tr>
                             @foreach ($clients as $client)
@@ -21,7 +22,11 @@
                                     <td>{{ $client->surname }}</td>
                                     <td>{{ $client->email }}</td>
                                     <td>{{ $client->code }}</td>
-                                    <td> SUMA</td>
+                                    {{-- <td>{{ $client->account }}</td> --}}
+                                    <td>{{$client->eur}}</td>
+                                    <td>
+                                        <a href="{{route('admin-show', $client)}}">Show</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </table>
