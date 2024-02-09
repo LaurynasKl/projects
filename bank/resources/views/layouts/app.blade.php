@@ -49,9 +49,12 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('client-index')}}">Pagrindinis puslapis</a>
                                 </li>
-                                {{-- <li class="nav-item">
-                                    <a class="nav-link" href="{{route('client-index')}}">Sukurti nauja sąskaita</a>
-                                </li> --}}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('client-create')}}">Sukurti nauja sąskaita</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('client-show')}}">Visos sąskaitos</a>
+                                </li>
                                 
                             </ul>
                             @endif

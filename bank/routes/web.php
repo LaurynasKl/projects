@@ -32,6 +32,9 @@ Route::prefix('admin')->name('admin-')->group(function() {
 
 Route::prefix('client')->name('client-')->group(function() {
     Route::get('/', [ClientController::class, 'index'])->name('index');
+    Route::get('/create', [ClientController::class, 'create'])->name('create');
+    Route::get('/show', [ClientController::class, 'show'])->name('show');
+
 });
 
 

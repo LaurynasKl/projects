@@ -4,22 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Action;
 
-class Client extends Model
+class Account extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'surname',
-        'email',
         'code',
         'account',
+        'client_code',
     ];
 
-    public function accounts()
+    public function client()
     {
-        return $this->hasMany(Account::class);
+        return $this->belongsTo(Client::class);
     }
 }
