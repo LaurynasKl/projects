@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,10 @@ Route::prefix('admin')->name('admin-')->group(function() {
     Route::get('/showAll', [AdminController::class, 'showAll'])->name('showAll');
     Route::get('/{client}/edit', [AdminController::class, 'edit'])->name('edit');
     Route::put('/{client}', [AdminController::class, 'update'])->name('update');
+});
+
+Route::prefix('client')->name('client-')->group(function() {
+    Route::get('/', [ClientController::class, 'index'])->name('index');
 });
 
 

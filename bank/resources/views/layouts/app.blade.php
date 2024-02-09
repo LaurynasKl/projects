@@ -28,6 +28,8 @@
                     <h1>Bankas U5</h1>
                     <div class="container-fluid">
                         <div class="collapse navbar-collapse" id="navbarNav">
+
+                            @if (Auth::check() && Auth::user()->name == 'Admin')
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('admin-index')}}">Pagrindinis puslapis</a>
@@ -39,6 +41,21 @@
                                     <a class="nav-link" href="{{route('admin-showAll')}}">Visi klientai</a>
                                 </li>
                             </ul>
+                            @endif
+
+
+                            @if (Auth::check() && Auth::user()->name !== 'Admin')
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('client-index')}}">Pagrindinis puslapis</a>
+                                </li>
+                                {{-- <li class="nav-item">
+                                    <a class="nav-link" href="{{route('client-index')}}">Sukurti nauja sąskaita</a>
+                                </li> --}}
+                                
+                            </ul>
+                            @endif
+
                         </div>
                     </div>
                 </nav>
@@ -59,11 +76,18 @@
                                 </li>
                             @endif
 
-                            @if (Route::has('register'))
+
+
+                            
+                            {{-- @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            @endif --}}
+
+
+
+
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
