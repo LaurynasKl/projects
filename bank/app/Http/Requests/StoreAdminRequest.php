@@ -22,7 +22,26 @@ class StoreAdminRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|min:3|max:30',
+            'surname' => 'required|string|min:3|max:30',
+            'email' => 'required|string|min:3|max:30',
+            'code' => 'required|string|min:11|max:11',
+            'password' => 'required|string|min:3|max:30',
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Pamiršote įvesti vardą',
+            'name.string' => 'Vardas turi būti tekstinis',
+            'name.min' => 'Vardas turi būti bent 3 simboliai',
+            'name.max' => 'Vardas turi būti ne daugiau 64 simbolių',
+            'surname.required' => 'Pamiršote įvesti pavardę',
+            'surname.string' => 'Pavardė turi būti tekstinė',
+            'surname.min' => 'Pavardė turi būti bent 3 simboliai',
+            'surname.max' => 'Pavardė turi būti ne daugiau 64 simbolių',
+        ];
+    }
+
 }

@@ -62,17 +62,21 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Admin $admin)
+    public function edit(Client $client)
     {
-        //
+        return view('admin.edit', [
+            'client' => $client,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAdminRequest $request, Admin $admin)
+    public function update(UpdateAdminRequest $request, Client $client)
     {
-        //
+        $client->update($request->all());
+        return redirect()->route('admin-showAll');
+        
     }
 
     /**

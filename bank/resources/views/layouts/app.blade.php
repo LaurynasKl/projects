@@ -25,18 +25,18 @@
             <div class="container">
 
                 <nav class="navbar navbar-expand-lg">
-                    <h1>Bank</h1>
+                    <h1>Bankas U5</h1>
                     <div class="container-fluid">
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('admin-index')}}">Main Page</a>
+                                    <a class="nav-link" href="{{route('admin-index')}}">Pagrindinis puslapis</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href=" {{route('admin-create')}} ">New Client</a>
+                                    <a class="nav-link" href=" {{route('admin-create')}} ">Naujas klientas</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('admin-showAll')}}">All Clients</a>
+                                    <a class="nav-link" href="{{route('admin-showAll')}}">Visi klientai</a>
                                 </li>
                             </ul>
                         </div>
@@ -90,6 +90,7 @@
         </nav>
 
         <main class="py-4">
+            @include('layouts.error')
             @yield('content')
         </main>
     </div>
