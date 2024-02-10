@@ -6,7 +6,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h2> {{ $client->name }} {{ $client->surname }}</h2>
+                        {{-- <h2> {{ $client->name }} {{ $client->surname }}</h2> --}}
                         <ul class="list-group">
                             <table class="table">
                                 <tr>
@@ -14,10 +14,10 @@
                                     <td> <b>Elektroninis paštas</b> {{ $client->email }}</td> --}}
                                 <tr>
                                 <tr>
-                                    <td><b>Iš viso sąskaitoje:</b> {{ $client->eur }}</td>
+                                    {{-- <td><b>Iš viso sąskaitoje:</b> {{ $client->eur }}</td> --}}
                                 </tr>
-                                    <td>{{ $client->account }}</td>
-                                    <td>{{ $client->id }}</td>
+                                    {{-- <td>{{ $client->account }}</td> --}}
+                                    
                                 </tr>
                             </table>
                     </div>

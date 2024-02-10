@@ -43,7 +43,6 @@
                             </ul>
                             @endif
 
-
                             @if (Auth::check() && Auth::user()->name !== 'Admin')
                             <ul class="navbar-nav">
                                 <li class="nav-item">
@@ -55,7 +54,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('client-show')}}">Visos sąskaitos</a>
                                 </li>
-                                
                             </ul>
                             @endif
 

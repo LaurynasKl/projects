@@ -10,9 +10,8 @@ class Account extends Model
     use HasFactory;
 
     protected $fillable = [
-        'code',
         'account',
-        'client_code',
+        'client_id',
     ];
 
     public function client()

@@ -18,6 +18,7 @@ class Client extends Model
         'account',
     ];
 
+
     public function accounts()
     {
         return $this->hasMany(Account::class);
