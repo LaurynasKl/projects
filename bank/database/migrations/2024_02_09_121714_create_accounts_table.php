@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->string('account', 50);
+            $table->timestamps();
+
             $table->unsignedBigInteger('client_id')->nullable();
             $table->foreign('client_id')->references('id')->on('clients');
-
-            $table->timestamps();
         });
     }
 

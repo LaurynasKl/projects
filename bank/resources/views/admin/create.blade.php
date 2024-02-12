@@ -26,6 +26,8 @@
             <label class="form-label">Slaptažodis</label>
             <input type="password" class="form-control" name="password" placeholder="Sukurkite slaptažodi">
           </div>
+          <div class="mb-2">
+          </div>
             <input type="hidden" name="account" value="{{'LT' . rand(1111111111111111, 9999999999999999)}}">
             <input type="hidden" name="eur" value="{{0}}">
           

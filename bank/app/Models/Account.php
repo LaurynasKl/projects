@@ -10,11 +10,11 @@ class Account extends Model
     use HasFactory;
 
     protected $fillable = [
-        'account',
         'client_id',
+        'account',
     ];
 
-    public function client()
+    public function clients()
     {
         return $this->belongsTo(Client::class);
     }

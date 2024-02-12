@@ -43,8 +43,10 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function users()
+
+
+    public function client()
     {
-        return $this->belongsTo(Client::class);
+        return $this->hasOne(Client::class);
     }
 }

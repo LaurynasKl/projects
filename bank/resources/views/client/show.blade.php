@@ -10,14 +10,11 @@
                         <ul class="list-group">
                             <table class="table">
                                 <tr>
-                                    {{-- <td> <b>Asmens kodas</b> {{ $client->code }} </td>
-                                    <td> <b>Elektroninis paštas</b> {{ $client->email }}</td> --}}
+                                    {{-- <td> <b>Asmens kodas</b> {{ $client->code }} </td> --}}
+                                    {{-- <td> <b>Elektroninis paštas</b> {{ $client->email }}</td> --}}
                                 <tr>
                                 <tr>
                                     {{-- <td><b>Iš viso sąskaitoje:</b> {{ $client->eur }}</td> --}}
-                                </tr>
-                                    {{-- <td>{{ $client->account }}</td> --}}
-                                    
                                 </tr>
                             </table>
                     </div>

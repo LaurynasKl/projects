@@ -21,7 +21,6 @@
                                     <td>{{ $client->surname }}</td>
                                     <td>{{ $client->email }}</td>
                                     <td>{{ $client->code }}</td>
-                                    {{-- <td>{{ $client->account }}</td> --}}
                                     <td>{{$client->eur}}</td>
                                     <td>
                                         <a href="{{route('admin-show', $client)}}">Peržiurėti</a>

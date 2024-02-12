@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Client;
 use App\Http\Requests\StoreClientRequest;
 use App\Http\Requests\UpdateClientRequest;
+use App\Models\Account;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,7 +29,10 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('client.create');
+        $clients = Client::all();
+        return view('client.create', [
+            'clients' => $clients,
+        ]);
     }
 
     /**
@@ -36,7 +40,8 @@ class ClientController extends Controller
      */
     public function store(StoreClientRequest $request)
     {
-        
+        Account::create($request->all());
+        return redirect()->route('client-show');
     }
 
     /**
@@ -44,6 +49,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
+        $client = Client::first();
         return view('client.show', [
             'client' => $client,
         ]);
