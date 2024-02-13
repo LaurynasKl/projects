@@ -22,6 +22,15 @@
                                     <td>{{ $client->eur }}</td>
                                 </tr>
                             </table>
+                            @foreach ($accounts as $account)
+                            @if ($account->user_id == Auth::user()->id)
+                            <tr>
+                                <td><b>Sąskaita:</b> {{ $account->account }} </td>
+                                <td><b> Suma </b> {{$account->eur}} </td>
+                                <td> <a href="{{route('client-edit', $account)}}">Informacija</a> </td>
+                            </tr>
+                            @endif
+                            @endforeach
                     </div>
                     </ul>
                 </div>

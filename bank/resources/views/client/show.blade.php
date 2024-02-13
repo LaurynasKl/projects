@@ -6,16 +6,24 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        {{-- <h2> {{ $client->name }} {{ $client->surname }}</h2> --}}
+                        <h2> {{ $client->name }} {{ $client->surname }}</h2>
                         <ul class="list-group">
                             <table class="table">
                                 <tr>
-                                    {{-- <td> <b>Asmens kodas</b> {{ $client->code }} </td> --}}
-                                    {{-- <td> <b>Elektroninis paštas</b> {{ $client->email }}</td> --}}
+                                    <td> <b>Asmens kodas</b> {{ $client->code }} </td>
+                                    <td> <b>Elektroninis paštas</b> {{ $client->email }}</td>
                                 <tr>
                                 <tr>
-                                    {{-- <td><b>Iš viso sąskaitoje:</b> {{ $client->eur }}</td> --}}
                                 </tr>
+                                @foreach ($accounts as $account)
+                                @if ($account->user_id == Auth::user()->id)
+                                <tr>
+                                    <td><b>Sąskaita:</b> {{ $account->account }} </td>
+                                    <td><b> Suma </b> {{$account->eur}} </td>
+                                    <td> <a href="{{route('client-edit', $account)}}">Informacija</a> </td>
+                                </tr>
+                                @endif
+                                @endforeach
                             </table>
                     </div>
                     </ul>

@@ -17,8 +17,6 @@ return new class extends Migration
             $table->string('surname', 20);
             $table->string('email', 100);
             $table->char('code', 11)->unique();
-            $table->string('account', 50);
-            $table->decimal('eur', 10, 2)->default(0);  
             $table->timestamps();
         });
     }

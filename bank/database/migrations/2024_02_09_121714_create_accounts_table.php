@@ -14,10 +14,13 @@ return new class extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->string('account', 50);
-            $table->timestamps();
+            $table->decimal('eur', 10, 2)->default(0);
 
-            $table->unsignedBigInteger('client_id')->nullable();
-            $table->foreign('client_id')->references('id')->on('clients');
+            
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+            
+            $table->timestamps();
         });
     }
 

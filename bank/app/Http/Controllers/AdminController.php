@@ -30,7 +30,10 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        $clients = Client::all();
+        return view('admin.create', [
+            'clients' => $clients,
+        ]);
     }
 
     /**
@@ -47,18 +50,22 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Client $client)
+    public function show(Client $client, Account $account)
     {
+        $accounts = Account::all();
         return view('admin.show', [
             'client' => $client,
+            'accounts' => $accounts,
         ]);
     }
 
     public function showAll()
     {
+        
         $clients = Client::all();
         return view('admin.showAll', [
             'clients' => $clients,
+            
         ]);
     }
 

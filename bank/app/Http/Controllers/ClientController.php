@@ -15,7 +15,7 @@ class ClientController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      */
@@ -49,26 +49,52 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        $client = Client::first();
+        $client = Auth::user();
+        $accounts = Account::all();
         return view('client.show', [
             'client' => $client,
+            'accounts' => $accounts,
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Client $client)
+    public function edit(Account $account)
     {
-        //
+        $client = Auth::user();
+        $accounts = Account::all();
+        return view('client.edit', [
+            'account' => $account,
+            'accounts' => $accounts,
+            'client' => $client,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateClientRequest $request, Client $client)
+    public function update(UpdateClientRequest $request, Account $account)
     {
-        //
+  
+        $to = $request->whereTo;
+        $whereTo = Account::findOrFail($to);
+        $whereToSum = $whereTo->eur;
+
+        if ($whereTo->id !== $account->id) {
+            $newSum = $request->eur;
+            $currentSum = $account->eur;
+            $minusSum = $currentSum - $newSum;
+            $plusSum = $whereToSum + $newSum;
+            $account->update(['eur' => $minusSum]);
+            $whereTo->update(['eur' => $plusSum]);
+        }
+
+        // dump($whereTo->id);
+        // dd($account->id);
+
+
+        return redirect()->route('client-show');
     }
 
     /**

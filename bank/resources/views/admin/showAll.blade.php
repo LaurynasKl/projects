@@ -13,7 +13,7 @@
                                 <th>Pavarde</th>
                                 <th>Elektroninis paštas</th>
                                 <th>Asmens kodas</th>
-                                <th>Iš viso</th>
+                                <th></th>
                             </tr>
                             @foreach ($clients as $client)
                                 <tr>
@@ -21,7 +21,6 @@
                                     <td>{{ $client->surname }}</td>
                                     <td>{{ $client->email }}</td>
                                     <td>{{ $client->code }}</td>
-                                    <td>{{$client->eur}}</td>
                                     <td>
                                         <a href="{{route('admin-show', $client)}}">Peržiurėti</a>
                                     </td>

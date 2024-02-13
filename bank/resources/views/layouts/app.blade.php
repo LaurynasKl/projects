@@ -18,6 +18,12 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
+<style>
+    body {
+      background-color: #254b70; /* Tamsi spalva (pavyzdys: pilka) */
+    }
+  </style>
+
 <body>
 
     <div id="app">
