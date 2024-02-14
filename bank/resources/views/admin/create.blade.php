@@ -28,9 +28,9 @@
           </div>
           <div class="mb-2">
           </div>
-            <input type="hidden" name="account" value="{{'LT' . rand(1111111111111111, 9999999999999999)}}">
-            <input type="hidden" name="eur" value="{{0}}">
-            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+            {{-- <input type="hidden" name="account"> --}}
+            {{-- <input type="hidden" name="eur" value="{{0}}"> --}}
+            <input type="hidden" name="user_code">
           
           <button type="submit" class="btn btn-primary">Sukurti</button>
           @csrf

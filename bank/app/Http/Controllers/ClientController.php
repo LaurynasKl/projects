@@ -76,23 +76,26 @@ class ClientController extends Controller
      */
     public function update(UpdateClientRequest $request, Account $account)
     {
-  
         $to = $request->whereTo;
         $whereTo = Account::findOrFail($to);
         $whereToSum = $whereTo->eur;
 
-        if ($whereTo->id !== $account->id) {
-            $newSum = $request->eur;
-            $currentSum = $account->eur;
-            $minusSum = $currentSum - $newSum;
-            $plusSum = $whereToSum + $newSum;
-            $account->update(['eur' => $minusSum]);
-            $whereTo->update(['eur' => $plusSum]);
+        $newSum = $request->eur;
+        $currentSum = $account->eur;
+        $minusSum = $currentSum - $newSum;
+        $plusSum = $whereToSum + $newSum;
+
+        if ($account->eur >= 0 && $newSum > $currentSum) {
+            return redirect()->route('client-show');
+        } else {
+            if ($whereTo->id !== $account->id) {
+                $account->update(['eur' => $minusSum]);
+                $whereTo->update(['eur' => $plusSum]);
+            }
         }
 
         // dump($whereTo->id);
-        // dd($account->id);
-
+        // dd($account->eur);
 
         return redirect()->route('client-show');
     }

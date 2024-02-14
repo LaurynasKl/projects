@@ -13,25 +13,17 @@
                                 <tr>
                                     <td> <b>Asmens kodas</b> {{ $client->code }} </td>
                                     <td> <b>Elektroninis paštas</b> {{ $client->email }}</td>
-                                <tr>
-                                <tr>
-                                    <td></td>
-                                    <td><b>Iš viso sąskaitoje:</b> {{ $client->eur }}</td>
-                                </tr>
-                                    <td>{{ $client->account }}</td>
-                                    <td>{{ $client->eur }}</td>
                                 </tr>
                             </table>
                             @foreach ($accounts as $account)
-                            @if ($account->user_id == Auth::user()->id)
-                            <tr>
-                                <td><b>Sąskaita:</b> {{ $account->account }} </td>
-                                <td><b> Suma </b> {{$account->eur}} </td>
-                                <td> <a href="{{route('client-edit', $account)}}">Informacija</a> </td>
-                            </tr>
-                            @endif
+                                @if ($account->user_code == $client->code)
+                                    <table class="table">
+                                        <td><b>Sąskaita:</b> {{ $account->account }} </td>
+                                        <td><b>Suma: </b> {{ $account->eur }} </td>
+                                    </table>
+                                @endif
                             @endforeach
-                    </div>
+                        </div>
                     </ul>
                 </div>
             </div>

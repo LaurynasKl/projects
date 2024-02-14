@@ -12,7 +12,7 @@ class Account extends Model
 
     protected $fillable = [
         'account',
-        'user_id',
+        'user_code',
         'eur',
     ];
 

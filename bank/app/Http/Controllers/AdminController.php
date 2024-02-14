@@ -43,7 +43,7 @@ class AdminController extends Controller
     {
         User::create($request->all());
         Client::create($request->all());
-        Account::create($request->all());
+        // Account::create($request->all());
         return redirect()->route('admin-showAll');
     }
 

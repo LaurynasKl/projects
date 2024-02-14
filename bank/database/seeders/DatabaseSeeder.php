@@ -23,11 +23,5 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123'),
             'role' => 'admin',
         ]);
-
-
-        DB::table('accounts')->insert([
-            'account' => 'Admin',
-            'user_id' => '1',
-        ]);
     }
 }

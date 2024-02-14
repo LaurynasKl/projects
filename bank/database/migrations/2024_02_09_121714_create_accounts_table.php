@@ -17,8 +17,8 @@ return new class extends Migration
             $table->decimal('eur', 10, 2)->default(0);
 
             
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->char('user_code')->nullable();
+            $table->foreign('user_code')->references('code')->on('users');
             
             $table->timestamps();
         });

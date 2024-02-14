@@ -19,10 +19,8 @@
                                 <label class="form-label m-2">I kokia pervesti </label>
                                 <select name="whereTo">
                                     @foreach ($accounts as $account)
-                                        {{-- @if ($account->user_id == Auth::user()->id) --}}
-                                            <option class="dropdown-item" value="{{ $account->id }}">
-                                                {{ $client->name }} {{ $client->surname }} {{ $account->account }}  </option>
-                                        {{-- @endif --}}
+                                        <option class="dropdown-item" value="{{ $account->id }}">
+                                            {{ $client->name }} {{ $client->surname }} {{ $account->account }} </option>
                                     @endforeach
                                 </select>
 
