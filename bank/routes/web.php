@@ -37,6 +37,8 @@ Route::prefix('client')->name('client-')->group(function() {
     Route::get('/show', [ClientController::class, 'show'])->name('show');
     Route::get('/{account}/edit', [ClientController::class, 'edit'])->name('edit');
     Route::put('/{account}', [ClientController::class, 'update'])->name('update');
+    Route::get('/{account}/delete', [ClientController::class, 'delete'])->name('delete');
+    Route::delete('/{account}', [ClientController::class, 'destroy'])->name('destroy');
 });
 
 

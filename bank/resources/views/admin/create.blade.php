@@ -8,19 +8,19 @@
         <form action="{{route('admin-store')}}" method="POST">
           <div class="mb-2">
             <label class="form-label">Vardas</label>
-            <input type="text" class="form-control" name="name" placeholder="Įveskite vardą">
+            <input type="text" class="form-control" name="name" placeholder="Įveskite vardą" value="{{old('name')}}">
           </div>
           <div class="mb-2">
             <label class="form-label">Pavarde</label>
-            <input type="text" class="form-control" name="surname" placeholder="Įveskite pavarde">
+            <input type="text" class="form-control" name="surname" placeholder="Įveskite pavarde" value="{{old('surname')}}">
           </div>
           <div class="mb-2">
             <label class="form-label">Elektroninis paštas</label>
-            <input type="text" class="form-control" name="email" placeholder="Įveskite elektroni paštą">
+            <input type="text" class="form-control" name="email" placeholder="Įveskite elektroni paštą" value="{{old('email')}}">
           </div>
           <div class="mb-2">
             <label class="form-label">Asmens kodas</label>
-            <input type="text" class="form-control" name="code" placeholder="Įveskite asmens kodą">
+            <input type="text" class="form-control" name="code" placeholder="Įveskite asmens kodą" value="{{old('code')}}">
           </div>
           <div class="mb-2">
             <label class="form-label">Slaptažodis</label>

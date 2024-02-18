@@ -37,9 +37,7 @@
 
                             @if (Auth::check() && Auth::user()->name == 'Admin')
                             <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{route('admin-index')}}">Pagrindinis puslapis</a>
-                                </li>
+                            
                                 <li class="nav-item">
                                     <a class="nav-link" href=" {{route('admin-create')}} ">Naujas klientas</a>
                                 </li>
@@ -51,9 +49,6 @@
 
                             @if (Auth::check() && Auth::user()->name !== 'Admin')
                             <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{route('client-index')}}">Pagrindinis puslapis</a>
-                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('client-create')}}">Sukurti nauja sąskaita</a>
                                 </li>
@@ -122,6 +117,7 @@
 
         <main class="py-4">
             @include('layouts.error')
+            @include('layouts.ok')
             @yield('content')
         </main>
     </div>

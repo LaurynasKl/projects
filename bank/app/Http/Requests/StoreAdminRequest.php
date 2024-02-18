@@ -36,11 +36,11 @@ class StoreAdminRequest extends FormRequest
             'name.required' => 'Pamiršote įvesti vardą',
             'name.string' => 'Vardas turi būti tekstinis',
             'name.min' => 'Vardas turi būti bent 3 simboliai',
-            'name.max' => 'Vardas turi būti ne daugiau 64 simbolių',
+            'name.max' => 'Vardas turi būti ne daugiau 30 simbolių',
             'surname.required' => 'Pamiršote įvesti pavardę',
             'surname.string' => 'Pavardė turi būti tekstinė',
             'surname.min' => 'Pavardė turi būti bent 3 simboliai',
-            'surname.max' => 'Pavardė turi būti ne daugiau 64 simbolių',
+            'surname.max' => 'Pavardė turi būti ne daugiau 30 simbolių',
         ];
     }
 

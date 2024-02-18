@@ -41,7 +41,7 @@ class ClientController extends Controller
     public function store(StoreClientRequest $request)
     {
         Account::create($request->all());
-        return redirect()->route('client-show');
+        return redirect()->route('client-show')->with('ok', 'Nauja sąskaita sukurta');
     }
 
     /**
@@ -51,6 +51,7 @@ class ClientController extends Controller
     {
         $client = Auth::user();
         $accounts = Account::all();
+
         return view('client.show', [
             'client' => $client,
             'accounts' => $accounts,
@@ -62,13 +63,23 @@ class ClientController extends Controller
      */
     public function edit(Account $account)
     {
+        $clients = User::all();
         $client = Auth::user();
         $accounts = Account::all();
+
+
+        // dump($account->user_code);
+        // dd($clients);
+
+
+
         return view('client.edit', [
             'account' => $account,
             'accounts' => $accounts,
             'client' => $client,
+            'clients' => $clients,
         ]);
+        
     }
 
     /**
@@ -94,17 +105,23 @@ class ClientController extends Controller
             }
         }
 
-        // dump($whereTo->id);
-        // dd($account->eur);
 
-        return redirect()->route('client-show');
+        return redirect()->route('client-show')->with('ok', 'Pavedimas atliktas');
+    }
+
+    public function delete(Account $account)
+    {
+        return view('client.delete', [
+            'account' => $account,
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Client $client)
+    public function destroy(Account $account)
     {
-        //
+        $account->delete();
+        return redirect()->route('client-show')->with('error', 'Sąskaita ištrinta');
     }
 }

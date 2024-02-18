@@ -43,8 +43,7 @@ class AdminController extends Controller
     {
         User::create($request->all());
         Client::create($request->all());
-        // Account::create($request->all());
-        return redirect()->route('admin-showAll');
+        return redirect()->route('admin-showAll')->with('ok', 'Naujas klientas sukurtas');
     }
 
     /**
@@ -53,6 +52,8 @@ class AdminController extends Controller
     public function show(Client $client, Account $account)
     {
         $accounts = Account::all();
+        // dd($account);
+
         return view('admin.show', [
             'client' => $client,
             'accounts' => $accounts,
@@ -85,7 +86,7 @@ class AdminController extends Controller
     public function update(UpdateAdminRequest $request, Client $client)
     {
         $client->update($request->all());
-        return redirect()->route('admin-showAll');
+        return redirect()->route('admin-showAll')->with('ok',' Kliento informacija atnaujinta');
         
     }
 

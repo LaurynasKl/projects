@@ -20,7 +20,8 @@
                                 <select name="whereTo">
                                     @foreach ($accounts as $account)
                                         <option class="dropdown-item" value="{{ $account->id }}">
-                                            {{ $client->name }} {{ $client->surname }} {{ $account->account }} </option>
+                                            {{-- {{ $account->user_code }} {{ $clients->code }}  --}}
+                                            {{ $account->account }} </option>
                                     @endforeach
                                 </select>
 

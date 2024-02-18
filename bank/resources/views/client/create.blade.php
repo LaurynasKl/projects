@@ -14,9 +14,6 @@
                             <input type="hidden" name="eur" value="{{ 0 }}">
 
                             <input type="hidden" name="user_code" value="{{ Auth::user()->code }}">
-
-
-
                         </div>
                         <button type="submit" class="btn btn-primary">Sukurti</button>
                         @csrf
