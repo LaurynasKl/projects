@@ -28,6 +28,8 @@ Route::prefix('admin')->name('admin-')->group(function() {
     Route::get('/showAll', [AdminController::class, 'showAll'])->name('showAll');
     Route::get('/{client}/edit', [AdminController::class, 'edit'])->name('edit');
     Route::put('/{client}', [AdminController::class, 'update'])->name('update');
+    Route::get('/{client}/delete', [AdminController::class, 'delete'])->name('delete');
+    Route::delete('/{client}', [AdminController::class, 'destroy'])->name('destroy');
 });
 
 Route::prefix('client')->name('client-')->group(function() {

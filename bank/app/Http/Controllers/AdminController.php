@@ -9,6 +9,7 @@ use App\Models\Account;
 use App\Models\Client;
 use App\Models\User;
 use Illuminate\Http\Client\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -16,7 +17,7 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      */
@@ -52,21 +53,30 @@ class AdminController extends Controller
     public function show(Client $client, Account $account)
     {
         $accounts = Account::all();
-        // dd($account);
+
+        $totalAccount = DB::table('accounts')
+            ->where('user_code', $client->code)
+            ->count();
+
+        $totalSum = DB::table('accounts')
+            ->where('user_code', $client->code)
+            ->sum('eur');
 
         return view('admin.show', [
             'client' => $client,
             'accounts' => $accounts,
+            'totalSum' => $totalSum,
+            'totalAccount' => $totalAccount,
         ]);
     }
 
     public function showAll()
     {
-        
+
         $clients = Client::all();
         return view('admin.showAll', [
             'clients' => $clients,
-            
+
         ]);
     }
 
@@ -86,15 +96,30 @@ class AdminController extends Controller
     public function update(UpdateAdminRequest $request, Client $client)
     {
         $client->update($request->all());
-        return redirect()->route('admin-showAll')->with('ok',' Kliento informacija atnaujinta');
-        
+        return redirect()->route('admin-showAll')->with('ok', ' Kliento informacija atnaujinta');
+    }
+
+    public function delete(Client $client)
+    {
+        return view('admin.delete', [
+            'client' => $client,
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Admin $admin)
+    public function destroy(Client $client)
     {
-        //
+        $users = User::all();
+        $accounts = Account::all();
+        foreach ($users as $user) {
+            if ($client->code == $user->code) {
+                $user->delete();
+                $client->delete();
+                return redirect()->route('admin-showAll');
+            }
+        }
+        return redirect()->route('admin-showAll');
     }
 }
