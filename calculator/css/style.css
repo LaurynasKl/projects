@@ -1,0 +1,19 @@
+h1 {
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+div {
+    display: flex;
+    justify-content: center;
+}
+input {
+    /* background-color: red; */
+    display: flex;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+}
+button {
+    padding: 20px;
+}

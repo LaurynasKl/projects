@@ -1,0 +1,14 @@
+<?php
+
+$accounts = [
+    [
+    'username' => 'Laurynas',
+    'password' => sha1('123'),
+    'number' => '12345678',
+    'age' => '26'
+    ],
+];
+
+file_put_contents(__DIR__ . '/../data/accounts.ser', serialize($accounts));
+
+echo 'seeder finish ';
