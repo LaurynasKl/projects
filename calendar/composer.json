@@ -1,0 +1,15 @@
+{
+    "name": "klumb/calendar",
+    "autoload": {
+        "psr-4": {
+            "Calendar\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "Laurynas",
+            "email": "klumbyslaurynas@gmail.com"
+        }
+    ],
+    "require": {}
+}
