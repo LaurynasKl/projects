@@ -5,15 +5,18 @@ namespace ZooPark\App\controllers;
 use App\DB\FileBase;
 use ZooPark\App\App;
 
-class AnimalController {
+class AnimalController
+{
 
-    public function index() {
-        return App::view('main',[
+    public function index()
+    {
+        return App::view('main', [
             'title' => 'Zoo Park'
         ]);
     }
 
-    public function add() {
+    public function add()
+    {
         return App::view('animals/add', [
             'title' => 'Adding animal'
         ]);
@@ -21,17 +24,19 @@ class AnimalController {
 
     public function store($request) {
 
-        $animalName = $request['animalName'];
-        $howMany = $request['howMany'];
+        $animalName = $request['animalName'] ?? null;
+        $howMany = $request['howMany'] ?? null;
 
         $writer = new FileBase('animals');
 
         $writer->create((object) [
             'animalName' => $animalName,
-            'howMany' => $howMany
+            'howMany' => $howMany,
         ]);
-        
+
         App::redirect('');
 
     }
+
+ 
 }
