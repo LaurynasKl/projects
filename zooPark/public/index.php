@@ -4,4 +4,7 @@ use ZooPark\App\App;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-App::run();
+define('ROOT', __DIR__ . '/../');
+define('URL', 'http://zoo-park.test/');
+
+echo App::run();
