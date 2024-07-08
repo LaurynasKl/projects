@@ -1,0 +1,15 @@
+{
+    "name": "klumb/zoo-park",
+    "autoload": {
+        "psr-4": {
+            "ZooPark\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "Laurynas",
+            "email": "klumbyslaurynas@gmail.com"
+        }
+    ],
+    "require": {}
+}
