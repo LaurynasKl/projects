@@ -32,7 +32,7 @@ class FileBase implements DataBase {
 
     public function create(object $userData): int
     {
-
+        
         $id = $this->index;
         $this->index++;
         $userData->id = $id;
