@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ZooPark\\' => array($baseDir . '/'),
+    'App\\DB\\' => array($baseDir . '/App/DB'),
 );

@@ -23,7 +23,7 @@ class App {
         if ($method == 'GET' && count($url) == 1 && $url[0] == '') {
             return (new AnimalController)->index();
         }
-        //                                                      create
+        //                                                                              create
         if ($method == 'GET' && count($url) == 2 && $url[0] == 'animals' && $url[1] == 'add') {
             return (new AnimalController)->add();
         }
@@ -31,6 +31,7 @@ class App {
         if ($method == 'POST' && count($url) == 2 && $url[0] == 'animals' && $url[1] == 'store') {
             return (new AnimalController)->store($_POST);
         }
+
 
 
 
@@ -47,5 +48,10 @@ class App {
 
         $content = ob_get_clean();
         return $content;
+    }
+
+    public static function redirect($url) {
+        header('Location:' . URL . "/$url");
+        return null;
     }
 }

@@ -2,6 +2,7 @@
 
 namespace ZooPark\App\controllers;
 
+use App\DB\FileBase;
 use ZooPark\App\App;
 
 class AnimalController {
@@ -19,9 +20,18 @@ class AnimalController {
     }
 
     public function store($request) {
+
         $animalName = $request['animalName'];
         $howMany = $request['howMany'];
 
+        $writer = new FileBase('animals');
+
+        $writer->create((object) [
+            'animalName' => $animalName,
+            'howMany' => $howMany
+        ]);
         
+        App::redirect('');
+
     }
 }
