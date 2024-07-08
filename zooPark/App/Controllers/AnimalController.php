@@ -38,5 +38,51 @@ class AnimalController
 
     }
 
+    public function showAll(){
+        $writer = new FileBase('animals');
+        $showAll = $writer->showAll();
+
+        return App::view('animals/showAll', [
+            'showAll' => $showAll,
+            'title' => 'All animals'
+        ]);
+    }
+
  
+
+    public function edit($id) {
+
+        $writer = new FileBase('animals');
+        $animal = $writer->show($id);
+        return App::view('animals/edit',[
+            'title' => 'Editing animals',
+            'animal' => $animal
+        ]);
+    }
+
+
+    public function update($id, $request) {
+
+        $animalName = $request['animalName'];
+        $howMany = $request['howMany'];
+
+        $writer = new FileBase('animals');
+        $writer->update($id, (object)[
+            'animalName' => $animalName,
+            'howMany' => $howMany
+        ]);
+        App::redirect('');
+
+    }
+
+    public function destroy($id) {
+
+        $writer = new FileBase('animals');
+        $writer->delete($id);
+
+        App::redirect('');
+    }
+
+
+
 }

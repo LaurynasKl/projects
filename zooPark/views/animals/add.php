@@ -3,8 +3,8 @@
 <div class="container">
     <div class="row mt-5 justify-content-center">
         <div class="col-7">
-            <div class="card text-center">
-                <div class="card-header">
+            <div class="card ">
+                <div class="card-header text-center">
                     Adding animal
                 </div>
 
@@ -22,8 +22,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer text-body-secondary">
-                        <button>Add</button>
+                    <div class="card-footer text-body-secondary text-center">
+                        <button class="btn btn-info">Add</button>
                     </div>
 
                 </form>

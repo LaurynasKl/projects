@@ -33,6 +33,23 @@ class App {
         }
 
 
+        if ($method == 'GET' && count($url) == 2 && $url[0] == 'animals' && $url[1] == 'showAll') {
+            return (new AnimalController)->showAll();
+        }
+
+        if ($method == 'GET' && count($url) == 3 && $url[0] == 'animals' && $url[1] == 'edit') {
+            return (new AnimalController)->edit($url[2]);
+        }
+        if ($method == 'POST' && count($url) == 3 && $url[0] == 'animals' && $url[1] == 'update') {
+            return (new AnimalController)->update($url[2], $_POST);
+        }
+
+        if ($method == 'POST' && count($url) == 3 && $url[0] == 'animals' && $url[1] == 'destroy') {
+            return (new AnimalController)->destroy($url[2]);
+        }
+
+
+
 
 
     }

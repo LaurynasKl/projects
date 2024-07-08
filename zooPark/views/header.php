@@ -18,15 +18,12 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="<?= URL ?>/animals/add">Add new Animal</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="<?= URL ?>/animals/showAll">All animals</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li>
       </ul>
       <form class="d-flex" role="search">

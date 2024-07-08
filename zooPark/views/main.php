@@ -5,7 +5,7 @@
     <h1 class="display-4 fw-bold">Welcome to Zoo Park</h1>
     <h3 class="fw-normal text-muted mb-3">Here you can see all the animals</h3>
     <div class="d-flex gap-3 justify-content-center lead fw-normal">
-      <a class="icon-link" href="#">
+      <a class="icon-link" href="<?= URL ?>/animals/showAll">
         See all animals
         <svg class="bi">
           <use xlink:href="#chevron-right"></use>

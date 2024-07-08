@@ -41,23 +41,43 @@ class FileBase implements DataBase {
 
     }
 
-    // public function update(int $userId, object $userData): bool
-    // {
+    public function update(int $userId, object $userData): bool
+    {
+        foreach ($this->data as $key => $value) {
+            if ($value->id == $userId) {
+                $userData->id = $userId;
+                $this->data[$key] = $userData;
+                return true;
+            };
+        }
+        return false;
 
-    // }
+    }
 
-    // public function delete(int $userId): bool
-    // {
+    public function delete(int $userId): bool
+    {
+        foreach ($this->data as $key => $value) {
+            if ($value->id == $userId) {
+                unset($this->data[$key]);
+                $this->data = array_values($this->data);
+                return true;
+            }
+        }
+        return false;
+    }
 
-    // }
+    public function show(int $userId): object
+    {
+        foreach ($this->data as $key => $value) {
+            if ($value->id == $userId) {
+                return $value;
+            }
+        }
 
-    // public function show(int $userId): object
-    // {
+    }
 
-    // }
-
-    // public function showAll(): array
-    // {
-
-    // }
+    public function showAll(): array
+    {
+        return $this->data;
+    }
 }
