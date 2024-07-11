@@ -9,15 +9,21 @@ class Calendar{
 
     public function __construct($year, $month, $day)
     {
-        $this->data[] = $year;
-        $this->data[] = $month;
-        $this->data[] = $day;
+        $this->year = $year;
+        $this->month = $month;
+        $this->day = $day;
+
+
+        $this->data[] = [
+            'year' => $this->year,
+            'month' => $this->month,
+            'day' => $this->day
+        ];
+
     }
     
     public function view() {
-
-        // extract($this->data);
-        require ROOT . 'views/main.php';
+        
         return $this->data;
 
     }
