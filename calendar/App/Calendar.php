@@ -2,16 +2,26 @@
 
 namespace Calendar\App;
 
-use Calendar\App\Controller\CalendarController;
-
 class Calendar{
 
-    public static function index(){
+    private $year, $month, $day;
+    private $data = [];
 
-        $calendar = new CalendarController(date('Y'), date('D'), date('M'));
+    public function __construct($year, $month, $day)
+    {
+        $this->data[] = $year;
+        $this->data[] = $month;
+        $this->data[] = $day;
+    }
+    
+    public function view() {
 
-        return $calendar;
+        // extract($this->data);
+        require ROOT . 'views/main.php';
+        return $this->data;
 
     }
+
+
     
 }
