@@ -11966,5 +11966,21 @@ textarea.form-control-lg {
   }
 }
 h1, .h1 {
-  color: blue;
+  color: magenta;
+}
+
+.days {
+  /* flex: 0 0 14.28%; */
+  max-width: 14.28%;
+  width: 100%;
+}
+
+.weekDays {
+  max-width: 14.28%;
+  text-align: center;
+}
+
+.selected {
+  color: red;
+  background-color: rgba(0, 0, 0, 0.15);
 }
