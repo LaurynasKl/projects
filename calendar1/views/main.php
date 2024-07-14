@@ -11,7 +11,7 @@
                             </div>
                         </div>
 
-                        <!-- <?php require ROOT . '/views/days.php' ?> -->
+                        <?php require ROOT . '/views/days.php' ?>
 
                         <div class="row">
                             <?php for ($i = 1; $i <= date('t'); $i++) : ?>
