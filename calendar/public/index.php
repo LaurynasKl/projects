@@ -10,9 +10,9 @@ define('URL', 'http://localhost/projects/calendar/public');
 define('ROOT', __DIR__ . '/../');
 
 
-// $calendar = new Calendar(date('Y'), date('m'), date('d'));
+$calendar = new Calendar(date('Y'), date('M'), date('d'));
 
-// $calendar->view();
+$calendar->view();
 
-$calendar = new CalendarController();
-$calendar->index();
+// $calendar = new CalendarController();
+// $calendar->index();

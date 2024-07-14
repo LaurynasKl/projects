@@ -14,7 +14,6 @@ class CalendarController {
         
         // extract($this->data);
         require ROOT . 'views/main.php';
-        // var_dump($calendar);
         return $calendar;
     }
 }

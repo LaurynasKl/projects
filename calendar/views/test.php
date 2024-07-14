@@ -6,27 +6,22 @@
             <div class="text-center border shadow p-3 mb-5 bg-body-tertiary rounded">
 
                 <div class="body m-3 ">
-                    <?php foreach ($this->data as $key => $value) : ?>
+                    <?php foreach ($calendar as $key => $value) : ?>
                         <div class="row">
                             <div class="col ">
-                                <form action="<?= URL ?>'/views/months" method="get">
-                                    <button class="btn border-black mb-4"><?= $value['year'] ?> <?= $value['month'] ?></button>
-                                </form>
+                                <button class="btn border-black mb-4"><?= $value['year'] ?> <?= $value['month'] ?></button>
                             </div>
                         </div>
 
                         <?php require ROOT . '/views/days.php' ?>
 
+                        <p><?= $year = date("m",time()); ?></p>
 
                         <div class="row">
                             <?php for ($i = 1; $i <= date('t'); $i++) : ?>
                                 <div class="days col-2 " name='<?= $i ?>'>
 
-                                    <?php if ($i == $value['day']) : ?>
-                                        <button class="selected btn btn-outline-info border-light"> <?= $i ?> </button>
-                                    <?php else : ?>
                                         <button class="btn btn-outline-success border-light"> <?= $i ?> </button>
-                                    <?php endif ?>
                                 </div>
                             <?php endfor ?>
 

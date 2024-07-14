@@ -24,6 +24,7 @@ class Calendar{
     
     public function view() {
         
+        require ROOT . 'views/main.php';
         return $this->data;
 
     }
