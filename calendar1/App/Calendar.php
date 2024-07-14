@@ -51,7 +51,7 @@ class Calendar {
         //     return self::view('index', $data, $url[1]);
         // }
         if ($method == 'GET' && count($url) == 2 && $url[0] == 'views') {
-            return self::view('main', $data, $url[1]);
+            return self::view('testing', $data, $url[1]);
         }
 
 

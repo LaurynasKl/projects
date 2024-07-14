@@ -1,8 +1,10 @@
-<h1>main calendar page</h1>
 <div class="container ">
     <div class="row justify-content-center ">
         <div class="col-5 mt-5">
             <div class="text-center border shadow p-3 mb-5 bg-body-tertiary rounded">
+
+                <h1>tesing calendar page</h1>
+
                 <div class="body m-3 ">
                     <?php foreach ($data as $key => $value) : ?>
                         <div class="row">
@@ -10,6 +12,16 @@
                                 <a class="btn border-black mb-4" href="<?= URL ?>"> <?= $value['year'] ?> <?= $value['month'] ?></a>
                             </div>
                         </div>
+
+                        <?php
+                        echo date('n');
+
+                        
+                        
+                        
+                        
+                        
+                        ?>
 
                         <?php require ROOT . '/views/days.php' ?>
 
