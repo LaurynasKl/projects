@@ -13,8 +13,8 @@
                     <div class="card-body bg-info">
                         <div class="row">
                             <div>
-                                <label for="animalName" class="form-label">Enter animal name</label>
-                                <input type="text" class="form-control" id="animalName" name="animalName" style="width: 200px;">
+                                <label class="form-label">Enter animal name</label>
+                                <input type="text" class="form-control" name="animalName" style="width: 200px;">
                             </div>
                             <div>
                                 <label for="howMany" class="form-label">Enter how many you want to add</label>
