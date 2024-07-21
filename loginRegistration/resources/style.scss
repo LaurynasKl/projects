@@ -1,0 +1,44 @@
+@import 'bootstrap/scss/bootstrap.scss'; 
+
+body{
+  background-color: rgb(123, 156, 167);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .row{
+  background-color: rgb(78, 144, 167);
+  }
+
+  label {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 5px;
+  }
+  input {
+    box-shadow: 3px 4px 10px rgb(75, 74, 74);
+    border-radius: 5px;
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .signup {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    font-weight: bolder;
+    padding-top: 20px;
+    a{
+      padding:0 5px 0 5px;
+    }
+  }
+}

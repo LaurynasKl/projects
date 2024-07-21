@@ -1,0 +1,15 @@
+{
+    "name": "klumb/login-registration",
+    "autoload": {
+        "psr-4": {
+            "LoginRegistration\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "Laurynas",
+            "email": "klumbyslaurynas@gmail.com"
+        }
+    ],
+    "require": {}
+}
