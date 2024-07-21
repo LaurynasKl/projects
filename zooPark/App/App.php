@@ -23,7 +23,7 @@ class App
 
         $method = $_SERVER['REQUEST_METHOD'];
 
-        if ($method == 'GET' && count($url) == 1 && $url[0] == '') {
+        if ($method == 'GET' && count($url) == 2 && $url[0] == 'project' && $url[1] == 'zooPark') {
             return (new AnimalController)->index();
         }
 

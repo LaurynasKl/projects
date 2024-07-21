@@ -1,0 +1,15 @@
+{
+    "name": "klumb/testing",
+    "autoload": {
+        "psr-4": {
+            "Testing\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "Laurynas",
+            "email": "klumbyslaurynas@gmail.com"
+        }
+    ],
+    "require": {}
+}
