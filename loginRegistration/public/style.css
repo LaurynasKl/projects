@@ -11965,10 +11965,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body {
-  background-color: rgb(123, 156, 167);
-}
-
 .container {
   display: flex;
   justify-content: center;
@@ -11992,16 +11988,16 @@ body {
 .container form {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
-
 .container .signup {
   display: flex;
   justify-content: center;
   padding: 5px;
   font-weight: bolder;
   padding-top: 20px;
-  a{
-    padding:0 5px 0 5px;
-  }
+}
+.container .signup a {
+  display: flex;
+  padding: 0 5px 0 5px;
+  color: red;
 }

@@ -3,6 +3,7 @@
 namespace LoginRegistration\App;
 
 use LoginRegistration\App\Controller\LoginController;
+use LoginRegistration\App\Controller\RegistrationController;
 
 class Auth {
 
@@ -22,8 +23,17 @@ class Auth {
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method == 'GET' && count($url) == 1 && $url[0] == '') {
+            return (new LoginController)->main();
+        };
+        if ($method == 'GET' && count($url) == 1 && $url[0] == 'login') {
             return (new LoginController)->login();
         };
+
+        if ($method == 'GET' && count($url) == 1 && $url[0] == 'registration') {
+            return (new RegistrationController)->registration();
+        };
+
+        return '404';
         
     }
 
