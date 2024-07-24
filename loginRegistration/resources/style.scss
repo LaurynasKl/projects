@@ -1,40 +1,49 @@
 @import 'bootstrap/scss/bootstrap.scss'; 
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-
-  .row{
-  background-color: rgb(78, 144, 167);
+body {
+    background: linear-gradient(to right, rgb(248, 113, 113), #89bbc7);
   }
-
-  label {
+  
+  .row {
+    background-color: rgb(223, 219, 219);
     display: flex;
     justify-content: center;
     text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 5px;
-  }
-  input {
-    box-shadow: 3px 4px 10px rgb(75, 74, 74);
-    border-radius: 5px;
-  }
-  form {
-    display: flex;
-    justify-content: center;
     align-items: center;
-  }
+    width: 400px;
+    padding: 1.5rem;
+    margin: 50px auto;
+    box-shadow:0 10px 30px rgb(48, 44, 44) ;
+    border-radius: 10%;
   
-  .signup {
-    display: flex;
-    justify-content: center;
-    padding: 5px;
-    font-weight: bolder;
-    padding-top: 20px;
-    a{
-      padding:0 5px 0 5px;
+    form {
+      text-align: center;
+  
+      label{
+        display: flex;
+        justify-content: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      input {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid black;
+        margin-bottom: 10px;
+      }
+      button {
+        width: 35%;
+      }
+      
+    }
+    .links{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+    }
+    p{
+      height: 50%;
+      margin: 0 5%;
     }
   }
-}
+

@@ -2,7 +2,8 @@
     "name": "klumb/login-registration",
     "autoload": {
         "psr-4": {
-            "LoginRegistration\\": ""
+            "LoginRegistration\\": "",
+            "": ""
         }
     },
     "authors": [

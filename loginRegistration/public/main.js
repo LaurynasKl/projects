@@ -2964,7 +2964,19 @@ function withinMaxClamp(min, value, max) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 
-console.log('main.js');
+console.log("main.js");
+var signUpBtn = document.getElementById("signUp");
+var signInBtn = document.getElementById("signIn");
+var signUpform = document.getElementById("signUpForm");
+var signInform = document.getElementById("signInForm");
+signUpBtn.addEventListener("click", function () {
+  signInform.style.display = "none";
+  signUpform.style.display = "block";
+});
+signInBtn.addEventListener("click", function () {
+  signInform.style.display = "block";
+  signUpform.style.display = "none";
+});
 
 /***/ }),
 

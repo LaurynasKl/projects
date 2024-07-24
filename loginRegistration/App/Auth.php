@@ -3,9 +3,13 @@
 namespace LoginRegistration\App;
 
 use LoginRegistration\App\Controller\LoginController;
-use LoginRegistration\App\Controller\RegistrationController;
+use LoginRegistration\App\DB\MariaBase;
 
 class Auth {
+
+    private static $auth;
+    private $login = false;
+    private $user;
 
     public static function run() {
 
@@ -23,15 +27,18 @@ class Auth {
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method == 'GET' && count($url) == 1 && $url[0] == '') {
-            return (new LoginController)->main();
-        };
-        if ($method == 'GET' && count($url) == 1 && $url[0] == 'login') {
-            return (new LoginController)->login();
+            return (new LoginController)->index();
         };
 
-        if ($method == 'GET' && count($url) == 1 && $url[0] == 'registration') {
-            return (new RegistrationController)->registration();
+        if ($method == 'POST' && count($url) == 1 && $url[0] == 'main') {
+            return (new LoginController)->main($_POST);
         };
+        if ($method == 'POST' && count($url) == 1 && $url[0] == 'logout') {
+            return (new LoginController)->logout();
+        };
+
+
+
 
         return '404';
         
@@ -47,5 +54,9 @@ class Auth {
 
     }
     
+    public static function redirect($url) {
+        header('Location:' . URL . "/$url");
+        return null;
+    }
 
 }
